@@ -9,8 +9,10 @@
       "vpc_id": "",
       "subnet_id": ""
     },
-    "_comment1" : "packer build -var \"aws_secret_key=foo\" template.json",
-    "_comment2" : "packer build -var-file packer-vars.json template.json",
+    "_comment1" : "packer validate -var-file packer-vars.json packer.json",
+    "_comment2" : "packer inspect -var-file packer-vars.json packer.json",
+    "_comment3" : "packer build -var \"aws_secret_key=foo\" template.json",
+    "_comment4" : "packer build -var-file packer-vars.json template.json",
     "builders": [{
       "access_key": "{{user `aws_access_key`}}",
       "secret_key": "{{user `aws_secret_key`}}",
